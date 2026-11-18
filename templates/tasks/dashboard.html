@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Overview · Taskspace{% endblock %}
+
+{% block content %}
+<div class="page-heading">
+  <div>
+    <p class="eyebrow">Workspace overview</p>
+    <h1>Keep the team moving</h1>
+    <p class="intro">Organize work into lists, assign owners, and follow progress together.</p>
+  </div>
+  <div class="action-placeholder">Create task list action</div>
+</div>
+
+<section aria-labelledby="lists-heading">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Shared work</p>
+      <h2 id="lists-heading">Task lists</h2>
+    </div>
+    <span class="section-hint">Lists available to this member</span>
+  </div>
+  {# TODO: loop over task_lists; render a linked card with title, description, members, and progress. #}
+  <div class="card-grid">
+    <div class="placeholder-card">
+      <span class="placeholder-icon" aria-hidden="true">▦</span>
+      <h3>Task list cards</h3>
+      <p>Place each list's name, short description, member count, and completion progress here.</p>
+    </div>
+    <div class="placeholder-card muted">
+      <span class="placeholder-icon" aria-hidden="true">＋</span>
+      <h3>Empty state</h3>
+      <p>When no lists exist, invite the member to create the first one.</p>
+    </div>
+  </div>
+</section>
+
+<section class="panel" aria-labelledby="assigned-heading">
+  <div class="section-heading compact">
+    <div>
+      <p class="eyebrow">Personal queue</p>
+      <h2 id="assigned-heading">Assigned to me</h2>
+    </div>
+  </div>
+  {# TODO: show only tasks assigned to the signed-in member, with status and due date. #}
+  <div class="placeholder-row">Assigned task items appear here.</div>
+</section>
+{% endblock %}

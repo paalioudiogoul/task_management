@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Task · Taskspace{% endblock %}
+
+{% block content %}
+<div class="breadcrumb">Overview <span aria-hidden="true">/</span> Task list <span aria-hidden="true">/</span> Task</div>
+<div class="page-heading">
+  <div>
+    <p class="eyebrow">Task detail</p>
+    <h1>Task title</h1>
+    <p class="intro">Task description and expected outcome go here.</p>
+  </div>
+  <div class="action-placeholder">Edit task action</div>
+</div>
+
+<div class="detail-grid">
+  <div class="stack">
+    <section class="panel" aria-labelledby="description-heading">
+      <p class="eyebrow">The work</p>
+      <h2 id="description-heading">Description</h2>
+      <div class="placeholder-row">Full task description appears here.</div>
+    </section>
+    <section class="panel" aria-labelledby="discussion-heading">
+      <p class="eyebrow">Cooperation</p>
+      <h2 id="discussion-heading">Discussion</h2>
+      {# TODO: render comments in time order, with author and timestamp; add a validated comment form. #}
+      <div class="placeholder-row">Comments and activity appear here.</div>
+      <div class="action-placeholder small">Comment form area</div>
+    </section>
+  </div>
+
+  <aside class="panel" aria-labelledby="details-heading">
+    <p class="eyebrow">At a glance</p>
+    <h2 id="details-heading">Details</h2>
+    {# TODO: show status, assignee, due date, list, and permitted edit controls. #}
+    <dl class="detail-list">
+      <div><dt>Status</dt><dd>Task status</dd></div>
+      <div><dt>Assignee</dt><dd>Member name or Unassigned</dd></div>
+      <div><dt>Due date</dt><dd>Date or No due date</dd></div>
+      <div><dt>Task list</dt><dd>Parent list name</dd></div>
+    </dl>
+  </aside>
+</div>
+{% endblock %}

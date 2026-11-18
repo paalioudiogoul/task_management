@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Task list · Taskspace{% endblock %}
+
+{% block content %}
+<div class="breadcrumb">Overview <span aria-hidden="true">/</span> Task list</div>
+<div class="page-heading">
+  <div>
+    <p class="eyebrow">Shared task list</p>
+    <h1>Task list name</h1>
+    <p class="intro">Task list description and overall goal go here.</p>
+  </div>
+  <div class="action-placeholder">Add task action</div>
+</div>
+
+<div class="detail-grid">
+  <section class="panel" aria-labelledby="tasks-heading">
+    <div class="section-heading compact">
+      <div>
+        <p class="eyebrow">Work items</p>
+        <h2 id="tasks-heading">Tasks</h2>
+      </div>
+      <span class="section-hint">Filter or sort controls</span>
+    </div>
+    {# TODO: loop over tasks; show title, status, assignee, and due date. Link to task detail. #}
+    <div class="task-placeholder">
+      <span class="task-check" aria-hidden="true"></span>
+      <div><strong>Task item title</strong><p>Short description or latest activity</p></div>
+      <span class="status-pill">Status</span>
+    </div>
+    <div class="placeholder-row">More task items or an empty state appear here.</div>
+  </section>
+
+  <aside class="panel" aria-labelledby="members-heading">
+    <p class="eyebrow">Cooperation</p>
+    <h2 id="members-heading">Members</h2>
+    {# TODO: list owner and members, then show invite/remove actions only to authorized users. #}
+    <div class="placeholder-row">Owner and member names appear here.</div>
+    <div class="action-placeholder small">Invite member action</div>
+  </aside>
+</div>
+{% endblock %}

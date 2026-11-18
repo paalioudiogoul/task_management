@@ -1,0 +1,39 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Task lists{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">✓</span> Taskspace</div>
+      <p class="sidebar-label">Workspace</p>
+      <nav class="side-nav" aria-label="Main">
+        {# TODO: replace labels with named Django URL links when routes exist. #}
+        <span class="nav-current">Overview</span>
+        <span>Task lists</span>
+        <span>Assigned to me</span>
+      </nav>
+      <div class="sidebar-note">
+        <strong>Team space</strong>
+        <p>Task lists, assignments, and discussion will appear here.</p>
+      </div>
+    </aside>
+
+    <div class="main-column">
+      <header class="topbar">
+        <span class="workspace-name">Collaborative task management</span>
+        <span class="user-placeholder">Account area</span>
+      </header>
+      <main id="main-content" class="content">
+        {% block content %}{% endblock %}
+      </main>
+    </div>
+  </div>
+</body>
+</html>
